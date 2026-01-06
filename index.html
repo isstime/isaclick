@@ -55,4 +55,33 @@
             transition: transform 0.2s;
         }
 
-        .pixieset-btn:hover {
+        .pixieset-btn:hover { transform: scale(1.05); }
+
+        /* Mobile-Specific Adjustments (Screens smaller than 600px) */
+        @media only screen and (max-width: 600px) {
+            img.logo { 
+                max-width: 250px; /* Shrinks logo slightly for small screens */
+            }
+            h1 { font-size: 1.8em; }
+            body { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="logo.png" alt="isAclick Logo" class="logo">
+    </div>
+
+    <h1>Capturing Moments, Creating Memories</h1>
+    <p>Professional Event Photography</p>
+
+    <div class="booking-container">
+        <h2>Book Your Session</h2>
+        <p>Select your package and add-ons below:</p>
+        
+        <a href="#" class="pixieset-btn">VIEW PACKAGES & BOOK</a>
+    </div>
+
+</body>
+</html>
