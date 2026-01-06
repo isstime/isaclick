@@ -3,67 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>isAclick</title>
-<style>
-    /* 1. Base Styles (Mobile-First) */
-    body { 
-        background-color: #000; 
-        color: #fff; 
-        font-family: 'Arial', sans-serif; 
-        margin: 0; 
-        padding: 0;
-        /* Flexbox handles the centering of the entire page content */
-        display: flex;
-        flex-direction: column;
-        align-items: center;    /* Horizontal centering */
-        justify-content: flex-start;
-        min-height: 100vh;
-        text-align: center;     /* Centers all text by default */
-    }
-
-    .header {
-        padding: 40px 20px;
-        width: 100%;
-        display: flex;
-        justify-content: center; /* Ensures logo container is centered */
-    }
-
-    img.logo { 
-        max-width: 80%;         /* Keeps logo from hitting screen edges on mobile */
-        height: auto;
-        display: block;
-        margin: 0 auto;         /* Fallback centering */
-    }
-
-    h1 { 
-        color: #d4af37; 
-        font-size: 1.8em;       /* Optimized for mobile */
-        margin: 20px 15px; 
-    }
-
-    .booking-container { 
-        margin: 20px; 
-        background: #111; 
-        padding: 25px; 
-        border-radius: 10px; 
-        border: 1px solid #d4af37; 
-        width: 85%;             /* Fits small screens comfortably */
-        max-width: 600px;       /* Caps width for desktop */
-    }
-
-    /* 2. Desktop Adjustments (Screens larger than 768px) */
-    @media only screen and (min-width: 768px) {
-        img.logo { 
-            max-width: 350px;   /* Larger logo for desktop */
+    <title>isAclick Photography</title>
+    <style>
+        body { 
+            background-color: #000; 
+            color: #fff; 
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
-        h1 { 
-            font-size: 2.8em;   /* Larger text for desktop */
+        .header { padding: 40px 20px; }
+        img.logo { max-width: 300px; height: auto; }
+        h1 { color: #d4af37; font-size: 2.2em; margin-bottom: 10px; }
+        
+        /* The Container Fix */
+        .booking-section {
+            width: 95%;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #111;
+            border: 1px solid #d4af37;
+            border-radius: 12px;
+            overflow: hidden; /* Keeps the iframe corners rounded */
         }
-        .booking-container {
+        
+        iframe {
             width: 100%;
+            height: 1000px; /* Increased height so it's not "too small" */
+            border: none;
         }
-    }
-</style>
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.6em; }
+            img.logo { max-width: 200px; }
+            iframe { height: 1200px; } /* Extra height for mobile forms */
+        }
+    </style>
 </head>
 <body>
 
@@ -72,21 +50,13 @@
     </div>
 
     <h1>Capturing Moments, Creating Memories</h1>
-    <p></p>
 
-  <div class="booking-container">
-    <h2>Book Your Session</h2>
-    <p>Select your package and add-ons below:</p>
-    
-    <div class="iframe-wrapper" style="position: relative; overflow: hidden; width: 100%; padding-top: 56.25%;">
+    <div class="booking-section">
         <iframe 
-            src="https://isaclick.pixieset.com/booking" 
-            style="position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; border: none;"
-            title="isAclick Booking"
-            allowfullscreen>
+            src="https://isaclick.pixieset.com/booking/inquiry" 
+            title="isAclick Booking">
         </iframe>
     </div>
-</div>
 
 </body>
 </html>
