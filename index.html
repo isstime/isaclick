@@ -13,43 +13,43 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
         }
-        .header { padding: 40px 20px 10px 20px; }
+        .header { padding: 40px 20px 10px 20px; text-align: center; }
         img.logo { max-width: 300px; height: auto; }
         
-        /* Gold Subtitle Styling */
         h1 { 
             color: #d4af37; 
             font-size: 2.2em; 
             margin-bottom: 30px;
-            font-weight: bold;
+            text-align: center;
         }
 
-        /* White Form Container */
+        /* The White Container */
         .contact-container {
-            max-width: 600px;
+            max-width: 650px;
             width: 90%;
             margin: 0 auto 60px auto;
             padding: 40px;
-            background: #ffffff;
-            border-radius: 12px;
-            color: #333; /* Form text is dark for readability */
+            background: #fdfdfd;
+            border-radius: 15px;
+            color: #333;
             box-sizing: border-box;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .contact-container h2 {
-            color: #f2f2f2; /* Light gray "Inquiry Form" heading as seen in image */
-            font-size: 24px;
-            margin-top: 0;
-            margin-bottom: 30px;
+        /* Fixing the Invisible Title */
+        .form-title {
+            color: #eeeeee; /* Very light gray as seen in your screenshot */
+            font-size: 28px;
+            margin: 0 0 25px 0;
+            text-align: center;
+            font-weight: bold;
         }
 
         .fs-form {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            text-align: left;
+            gap: 15px;
         }
 
         fieldset {
@@ -58,14 +58,14 @@
             margin: 0;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 15px;
         }
 
         .fs-field {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            align-items: center; /* Centers labels above inputs per image */
+            gap: 5px;
+            text-align: center; /* Centers the labels like the image */
         }
 
         .col-span-full {
@@ -73,81 +73,70 @@
         }
 
         .fs-label {
-            font-weight: 500;
             font-size: 14px;
+            font-weight: 500;
             color: #333;
         }
 
         .fs-description {
             font-size: 11px;
-            color: #888;
+            color: #777;
             margin-top: 4px;
-            text-align: center;
         }
 
-        /* Input Styling */
+        /* Input Styling to match image */
         .fs-input, .fs-textarea, .fs-select {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 15px;
+            border-radius: 5px;
+            font-size: 14px;
             box-sizing: border-box;
+            background-color: #fff;
         }
 
         .fs-textarea {
-            height: 120px;
-            resize: vertical;
+            height: 100px;
         }
 
-        /* Checkbox & Options Layout */
-        .how-many-hours {
-            text-align: center;
-        }
-
-        .fs-checkbox-group {
-            display: inline-block;
-            text-align: left;
+        /* Specific alignment for the bottom row */
+        .bottom-row {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
             margin-top: 10px;
         }
 
-        .fs-checkbox-field {
+        .checkbox-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 8px;
+            gap: 8px;
             font-size: 14px;
+            margin-bottom: 5px;
         }
 
         /* Button Styling */
         .fs-button-group {
-            margin-top: 10px;
+            margin-top: 20px;
             text-align: center;
         }
 
         .fs-button {
-            background-color: #2c3136; /* Dark slate button */
+            background-color: #2c3136;
             color: white;
-            padding: 12px 30px;
+            padding: 12px 35px;
             border: none;
             border-radius: 6px;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 14px;
             cursor: pointer;
-            transition: background 0.3s;
         }
 
-        .fs-button:hover {
-            background-color: #d4af37; /* Gold hover effect */
-        }
-
-        /* Mobile Responsive */
+        /* Mobile */
         @media (max-width: 600px) {
-            h1 { font-size: 1.6em; }
-            img.logo { max-width: 220px; }
             fieldset { grid-template-columns: 1fr; }
             .col-span-full { grid-column: span 1; }
-            .contact-container { padding: 20px; }
+            .bottom-row { flex-direction: column; align-items: center; gap: 20px; }
         }
     </style>
 </head>
@@ -160,65 +149,56 @@
     <h1>Capturing Moments, Creating Memories</h1>
 
     <div class="contact-container">
-        <h2>Inquiry Form</h2>
+        <div class="form-title">Inquiry Form</div>
         
         <form action="https://formspree.io/f/maqnrygl" class="fs-form" method="POST">
             
             <fieldset>
                 <div class="fs-field">
-                    <label class="fs-label" for="first-name">First Name</label>
-                    <input class="fs-input" id="first-name" name="first-name" required />
+                    <label class="fs-label">First Name</label>
+                    <input class="fs-input" name="first-name" required />
                 </div>
                 <div class="fs-field">
-                    <label class="fs-label" for="last-name">Last Name</label>
-                    <input class="fs-input" id="last-name" name="last-name" required />
+                    <label class="fs-label">Last Name</label>
+                    <input class="fs-input" name="last-name" required />
                     <p class="fs-description">We'll use this to generate your pass.</p>
                 </div>
             </fieldset>
 
             <fieldset>
                 <div class="fs-field">
-                    <label class="fs-label" for="email">Email</label>
-                    <input type="email" class="fs-input" id="email" name="email" required />
+                    <label class="fs-label">Email</label>
+                    <input type="email" class="fs-input" name="email" required />
                 </div>
                 <div class="fs-field">
-                    <label class="fs-label" for="number">Contact Number</label>
-                    <input class="fs-input" id="number" name="number" placeholder="(000) 000-0000" required />
+                    <label class="fs-label">Contact Number</label>
+                    <input class="fs-input" name="phone" placeholder="(000) 000-0000" required />
                 </div>
             </fieldset>
 
             <div class="fs-field col-span-full">
-                <label class="fs-label" for="comments">Comments</label>
-                <textarea class="fs-textarea" id="comments" name="comments"></textarea>
+                <label class="fs-label">Comments</label>
+                <textarea class="fs-textarea" name="comments"></textarea>
             </div>
 
-            <fieldset>
-                <div class="fs-field how-many-hours">
+            <div class="bottom-row">
+                <div class="fs-field">
                     <label class="fs-label">How many hours?</label>
-                    <div class="fs-checkbox-group">
-                        <div class="fs-checkbox-field">
-                            <input type="checkbox" id="hr-1" name="duration" value="1hr" />
-                            <label for="hr-1">1hr</label>
-                        </div>
-                        <div class="fs-checkbox-field">
-                            <input type="checkbox" id="hr-2" name="duration" value="2hrs" />
-                            <label for="hr-2">2hrs</label>
-                        </div>
-                        <div class="fs-checkbox-field">
-                            <input type="checkbox" id="hr-3" name="duration" value="3+ hrs" />
-                            <label for="hr-3">3+ hrs</label>
-                        </div>
+                    <div style="text-align: left; margin-top: 10px;">
+                        <div class="checkbox-item"><input type="checkbox" name="hr" value="1hr"> 1hr</div>
+                        <div class="checkbox-item"><input type="checkbox" name="hr" value="2hrs"> 2hrs</div>
+                        <div class="checkbox-item"><input type="checkbox" name="hr" value="3+hrs"> 3+ hrs</div>
                     </div>
                 </div>
                 
                 <div class="fs-field">
-                    <label class="fs-label" for="options">Options</label>
-                    <select class="fs-select" id="options" name="package">
+                    <label class="fs-label">Options</label>
+                    <select class="fs-select" name="package" style="width: 180px;">
                         <option value="Digital Only">Digital Only</option>
                         <option value="Digital and Prints">Digital and Prints</option>
                     </select>
                 </div>
-            </fieldset>
+            </div>
 
             <div class="fs-button-group">
                 <button class="fs-button" type="submit">Submit Inquiry</button>
