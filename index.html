@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>isAclick | Inquiry</title>
     <style>
         /* 1. OVERALL PAGE STYLE */
-        body { 
-            background-color: #000000 !important; 
-            color: #ffffff; 
-            font-family: 'Arial', sans-serif; 
-            margin: 0; 
+        body {
+            background-color: #000000 !important;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
         }
 
-        .header { padding: 40px 20px 10px 20px; }
-        img.logo { max-width: 300px; height: auto; }
-        
-        h1 { 
-            color: #d4af37; 
-            font-size: 2.2em; 
+        .header {
+            padding: 40px 20px 10px 20px;
+        }
+
+        img.logo {
+            max-width: 300px;
+            height: auto;
+        }
+
+        h1 {
+            color: #d4af37;
+            font-size: 2.2em;
             margin-bottom: 30px;
             font-weight: bold;
         }
@@ -33,17 +40,21 @@
             width: 90%;
             margin: 0 auto 60px auto;
             padding: 40px;
-            background-color: #d4af37!important; /* Set to black for readability */
-            border: 2px solid #d4af37; /* GOLD BORDER ADDED HERE */
+            background-color: #d4af37 !important;
+            /* Set to black for readability */
+            border: 2px solid #d4af37;
+            /* GOLD BORDER ADDED HERE */
             border-radius: 15px;
-            color: #333333 !important; 
+            color: #333333 !important;
             box-sizing: border-box;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2); /* Slight gold glow */
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            /* Slight gold glow */
         }
 
         /* 3. FORM ELEMENTS */
         .form-title {
-            color: #555555 !important; /* Dark gray for visibility on white */
+            color: #555555 !important;
+            /* Dark gray for visibility on white */
             font-size: 26px;
             margin: 0 0 25px 0;
             font-weight: bold;
@@ -88,7 +99,9 @@
             margin-top: 4px;
         }
 
-        .fs-input, .fs-textarea, .fs-select {
+        .fs-input,
+        .fs-textarea,
+        .fs-select {
             width: 100%;
             padding: 12px;
             border: 1px solid #cccccc !important;
@@ -140,20 +153,121 @@
 
         .fs-button:hover {
             background-color: #d4af37 !important;
+            color: #000000 !important;
             transform: translateY(-2px);
+        }
+
+        .fs-button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .fs-button-cancel {
+            background-color: transparent !important;
+            border: 2px solid #555555 !important;
+            color: #555555 !important;
+        }
+
+        .fs-button-cancel:hover {
+            background-color: #a00000 !important;
+            /* Red for cancel */
+            border-color: #a00000 !important;
+            color: #ffffff !important;
         }
 
         /* 5. MOBILE RESPONSIVENESS */
         @media (max-width: 600px) {
-            img.logo { max-width: 220px; }
-            h1 { font-size: 1.6em; }
-            fieldset { grid-template-columns: 1fr; }
-            .col-span-full { grid-column: span 1; }
-            .bottom-row { flex-direction: column; align-items: center; gap: 20px; }
-            .contact-container { padding: 25px; }
+            img.logo {
+                max-width: 220px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            fieldset {
+                grid-template-columns: 1fr;
+            }
+
+            .col-span-full {
+                grid-column: span 1;
+            }
+
+            .bottom-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .contact-container {
+                padding: 25px;
+            }
+        }
+
+        /* 6. ANIMATIONS & DYNAMIC ELEMENTS */
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .pop-in {
+            animation: popIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .request-btn-container {
+            margin-bottom: 50px;
+        }
+
+        /* Large "Request" button style */
+        .request-btn {
+            background-color: #d4af37 !important;
+            color: #000000 !important;
+            font-size: 1.2em;
+            padding: 16px 50px;
+            border-radius: 50px;
+            /* Pill shape */
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            border: 2px solid transparent;
+        }
+
+        .request-btn:hover {
+            background-color: #000000 !important;
+            color: #d4af37 !important;
+            border: 2px solid #d4af37;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+            transform: scale(1.05);
+        }
+
+        .guarantee-text {
+            color: #cccccc;
+            font-size: 1rem;
+            margin-bottom: 40px;
+            margin-top: -15px;
+            /* Pull closer to header */
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .guarantee-highlight {
+            color: #d4af37;
+            /* Gold */
+            font-weight: bold;
+            font-style: italic;
+            border-bottom: 1px solid #d4af37;
+            padding-bottom: 3px;
         }
     </style>
 </head>
+
 <body>
 
     <div class="header">
@@ -162,11 +276,20 @@
 
     <h1>Capturing Moments, Creating Memories</h1>
 
-    <div class="contact-container">
+    <!-- CATCHY TAGLINE -->
+    <p class="guarantee-text">Premium Experience. <span class="guarantee-highlight">We Can Beat Any Price.</span></p>
+
+    <!-- BUTTON TO TRIGGER THE FORM -->
+    <div class="request-btn-container" id="btnContainer">
+        <button class="fs-button request-btn" onclick="showForm()">Request Inquiry</button>
+    </div>
+
+    <!-- WRAPPED FORM CONTAINER (Initially Hidden) -->
+    <div class="contact-container" id="contactForm" style="display: none;">
         <div class="form-title">Inquiry Form</div>
-        
+
         <form action="https://formspree.io/f/maqnrygl" class="fs-form" method="POST">
-            
+
             <fieldset>
                 <div class="fs-field">
                     <label class="fs-label">First Name</label>
@@ -204,7 +327,7 @@
                         <div class="checkbox-item"><input type="checkbox" name="hr" value="3+hrs"> 3+ hrs</div>
                     </div>
                 </div>
-                
+
                 <div class="fs-field">
                     <label class="fs-label" style="margin-bottom: 10px;">Options</label>
                     <select class="fs-select" name="package" style="width: 180px;">
@@ -216,10 +339,38 @@
 
             <div class="fs-button-group">
                 <button class="fs-button" type="submit">Submit Inquiry</button>
+                <button class="fs-button fs-button-cancel" type="button" onclick="hideForm()">Cancel</button>
             </div>
-            
+
         </form>
     </div>
 
+    <script>
+        function showForm() {
+            const btnContainer = document.getElementById('btnContainer');
+            const form = document.getElementById('contactForm');
+
+            // Hide the button
+            btnContainer.style.display = 'none';
+
+            // Reset animation (removed to allow re-triggering) and show form
+            form.classList.remove('pop-in');
+            void form.offsetWidth; // Trigger reflow to restart animation
+            form.style.display = 'block';
+            form.classList.add('pop-in');
+        }
+
+        function hideForm() {
+            const btnContainer = document.getElementById('btnContainer');
+            const form = document.getElementById('contactForm');
+
+            // Hide the form
+            form.style.display = 'none';
+
+            // Show the button again
+            btnContainer.style.display = 'block';
+        }
+    </script>
 </body>
+
 </html>
