@@ -27,22 +27,23 @@
             font-weight: bold;
         }
 
-        /* 2. THE WHITE FORM CONTAINER */
+        /* 2. THE WHITE FORM CONTAINER WITH GOLD BORDER */
         .contact-container {
             max-width: 600px;
             width: 90%;
             margin: 0 auto 60px auto;
             padding: 40px;
-            background-color:#000000 !important; /* Forces white box */
+            background-color: #ffffff !important; /* Set to white for readability */
+            border: 2px solid #d4af37; /* GOLD BORDER ADDED HERE */
             border-radius: 15px;
-            color: #333333 !important; /* Forces dark text for readability */
+            color: #333333 !important; 
             box-sizing: border-box;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2); /* Slight gold glow */
         }
 
         /* 3. FORM ELEMENTS */
         .form-title {
-            color: #000000 !important; /* Light gray title as seen in your screenshot */
+            color: #555555 !important; /* Dark gray for visibility on white */
             font-size: 26px;
             margin: 0 0 25px 0;
             font-weight: bold;
@@ -52,7 +53,7 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            text-align: center; /* Centers labels and inputs */
+            text-align: center;
         }
 
         fieldset {
@@ -87,7 +88,6 @@
             margin-top: 4px;
         }
 
-        /* Input styling to match your screenshot */
         .fs-input, .fs-textarea, .fs-select {
             width: 100%;
             padding: 12px;
@@ -104,7 +104,6 @@
             resize: vertical;
         }
 
-        /* Bottom Row Layout (Hours and Options) */
         .bottom-row {
             display: flex;
             justify-content: space-around;
@@ -127,7 +126,7 @@
 
         /* 4. THE SUBMIT BUTTON */
         .fs-button {
-            background-color: #2c3136 !important; /* Dark slate */
+            background-color: #2c3136 !important;
             color: #ffffff !important;
             padding: 14px 40px;
             border: none;
@@ -136,11 +135,12 @@
             font-size: 15px;
             cursor: pointer;
             margin-top: 20px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .fs-button:hover {
-            background-color: #d4af37 !important; /* Turns Gold on hover */
+            background-color: #d4af37 !important;
+            transform: translateY(-2px);
         }
 
         /* 5. MOBILE RESPONSIVENESS */
