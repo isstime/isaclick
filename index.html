@@ -3,46 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>isAclick</title>
+    <title>isAclick | Inquiry</title>
     <style>
+        /* 1. OVERALL PAGE STYLE */
         body { 
-            background-color: #000; 
-            color: #fff; 
+            background-color: #000000 !important; 
+            color: #ffffff; 
             font-family: 'Arial', sans-serif; 
             margin: 0; 
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
         }
-        .header { padding: 40px 20px 10px 20px; text-align: center; }
+
+        .header { padding: 40px 20px 10px 20px; }
         img.logo { max-width: 300px; height: auto; }
         
         h1 { 
             color: #d4af37; 
             font-size: 2.2em; 
             margin-bottom: 30px;
-            text-align: center;
+            font-weight: bold;
         }
 
-        /* The White Container */
+        /* 2. THE WHITE FORM CONTAINER */
         .contact-container {
-            max-width: 650px;
+            max-width: 600px;
             width: 90%;
             margin: 0 auto 60px auto;
             padding: 40px;
-            background: #fdfdfd;
+            background-color: #ffffff !important; /* Forces white box */
             border-radius: 15px;
-            color: #333;
+            color: #333333 !important; /* Forces dark text for readability */
             box-sizing: border-box;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* Fixing the Invisible Title */
+        /* 3. FORM ELEMENTS */
         .form-title {
-            color: #eeeeee; /* Very light gray as seen in your screenshot */
-            font-size: 28px;
+            color: #dddddd !important; /* Light gray title as seen in your screenshot */
+            font-size: 26px;
             margin: 0 0 25px 0;
-            text-align: center;
             font-weight: bold;
         }
 
@@ -50,6 +52,7 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
+            text-align: center; /* Centers labels and inputs */
         }
 
         fieldset {
@@ -58,14 +61,14 @@
             margin: 0;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 20px;
         }
 
         .fs-field {
             display: flex;
             flex-direction: column;
             gap: 5px;
-            text-align: center; /* Centers the labels like the image */
+            align-items: center;
         }
 
         .col-span-full {
@@ -73,70 +76,81 @@
         }
 
         .fs-label {
+            font-weight: bold;
             font-size: 14px;
-            font-weight: 500;
-            color: #333;
+            color: #333333 !important;
         }
 
         .fs-description {
             font-size: 11px;
-            color: #777;
+            color: #777777;
             margin-top: 4px;
         }
 
-        /* Input Styling to match image */
+        /* Input styling to match your screenshot */
         .fs-input, .fs-textarea, .fs-select {
             width: 100%;
             padding: 12px;
-            border: 1px solid #ccc;
+            border: 1px solid #cccccc !important;
             border-radius: 5px;
             font-size: 14px;
+            background-color: #ffffff !important;
+            color: #333333 !important;
             box-sizing: border-box;
-            background-color: #fff;
         }
 
         .fs-textarea {
             height: 100px;
+            resize: vertical;
         }
 
-        /* Specific alignment for the bottom row */
+        /* Bottom Row Layout (Hours and Options) */
         .bottom-row {
             display: flex;
             justify-content: space-around;
             align-items: flex-start;
             margin-top: 10px;
+            width: 100%;
+        }
+
+        .checkbox-group {
+            text-align: left;
+            font-size: 14px;
         }
 
         .checkbox-item {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 14px;
             margin-bottom: 5px;
         }
 
-        /* Button Styling */
-        .fs-button-group {
-            margin-top: 20px;
-            text-align: center;
-        }
-
+        /* 4. THE SUBMIT BUTTON */
         .fs-button {
-            background-color: #2c3136;
-            color: white;
-            padding: 12px 35px;
+            background-color: #2c3136 !important; /* Dark slate */
+            color: #ffffff !important;
+            padding: 14px 40px;
             border: none;
             border-radius: 6px;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 15px;
             cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s ease;
         }
 
-        /* Mobile */
+        .fs-button:hover {
+            background-color: #d4af37 !important; /* Turns Gold on hover */
+        }
+
+        /* 5. MOBILE RESPONSIVENESS */
         @media (max-width: 600px) {
+            img.logo { max-width: 220px; }
+            h1 { font-size: 1.6em; }
             fieldset { grid-template-columns: 1fr; }
             .col-span-full { grid-column: span 1; }
             .bottom-row { flex-direction: column; align-items: center; gap: 20px; }
+            .contact-container { padding: 25px; }
         }
     </style>
 </head>
@@ -156,11 +170,11 @@
             <fieldset>
                 <div class="fs-field">
                     <label class="fs-label">First Name</label>
-                    <input class="fs-input" name="first-name" required />
+                    <input class="fs-input" name="first-name" required>
                 </div>
                 <div class="fs-field">
                     <label class="fs-label">Last Name</label>
-                    <input class="fs-input" name="last-name" required />
+                    <input class="fs-input" name="last-name" required>
                     <p class="fs-description">We'll use this to generate your pass.</p>
                 </div>
             </fieldset>
@@ -168,11 +182,11 @@
             <fieldset>
                 <div class="fs-field">
                     <label class="fs-label">Email</label>
-                    <input type="email" class="fs-input" name="email" required />
+                    <input type="email" class="fs-input" name="email" required>
                 </div>
                 <div class="fs-field">
                     <label class="fs-label">Contact Number</label>
-                    <input class="fs-input" name="phone" placeholder="(000) 000-0000" required />
+                    <input class="fs-input" name="phone" placeholder="(000) 000-0000" required>
                 </div>
             </fieldset>
 
@@ -184,7 +198,7 @@
             <div class="bottom-row">
                 <div class="fs-field">
                     <label class="fs-label">How many hours?</label>
-                    <div style="text-align: left; margin-top: 10px;">
+                    <div class="checkbox-group">
                         <div class="checkbox-item"><input type="checkbox" name="hr" value="1hr"> 1hr</div>
                         <div class="checkbox-item"><input type="checkbox" name="hr" value="2hrs"> 2hrs</div>
                         <div class="checkbox-item"><input type="checkbox" name="hr" value="3+hrs"> 3+ hrs</div>
@@ -192,7 +206,7 @@
                 </div>
                 
                 <div class="fs-field">
-                    <label class="fs-label">Options</label>
+                    <label class="fs-label" style="margin-bottom: 10px;">Options</label>
                     <select class="fs-select" name="package" style="width: 180px;">
                         <option value="Digital Only">Digital Only</option>
                         <option value="Digital and Prints">Digital and Prints</option>
@@ -203,6 +217,7 @@
             <div class="fs-button-group">
                 <button class="fs-button" type="submit">Submit Inquiry</button>
             </div>
+            
         </form>
     </div>
 
